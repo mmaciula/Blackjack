@@ -17,6 +17,10 @@ public class Card {
         return suit;
     }
 
+    public String getCardRank(){
+        return cardRank;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,10 +34,5 @@ public class Card {
     public int hashCode() {
 
         return Objects.hash(suit, getCardRank());
-    }
-
-    public String getCardRank(){
-        return cardRank;
-
     }
 }

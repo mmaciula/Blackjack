@@ -14,8 +14,16 @@ public class BlackjackCard extends Card {
         isHidden = false;
     }
 
-    public int getCardValue(){
+    public int getCardValue() {
         return cardValue;
+    }
+
+    public boolean isHidden() {
+        return isHidden;
+    }
+
+    public void setHidden(boolean hidden) {
+        isHidden = hidden;
     }
 
     @Override
@@ -32,10 +40,5 @@ public class BlackjackCard extends Card {
     public int hashCode() {
 
         return Objects.hash(super.hashCode(), getCardValue(), isHidden());
-    }
-
-    public boolean isHidden(){
-        return isHidden;
-
     }
 }
