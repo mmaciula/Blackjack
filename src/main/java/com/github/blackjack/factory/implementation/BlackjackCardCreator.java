@@ -2,10 +2,11 @@ package com.github.blackjack.factory.implementation;
 
 import com.github.blackjack.factory.CardFactory;
 import com.github.blackjack.model.BlackjackCard;
+import com.github.blackjack.model.Card;
 import com.github.blackjack.model.enums.CardSuit;
 
 public class BlackjackCardCreator implements CardFactory {
-    public BlackjackCard createCard(CardSuit suit, String cardRank) {
+    public Card createCard(CardSuit suit, String cardRank) {
         int value;
         try {
             value = Integer.parseInt(cardRank);
