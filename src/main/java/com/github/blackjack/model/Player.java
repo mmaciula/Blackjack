@@ -5,11 +5,12 @@ import com.google.inject.assistedinject.AssistedInject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Player {
     private PointsCalculator pointsCalculator;
     private List<Card> cardsInHand;
-    private int points;
+    private Integer points;
     private String name;
     private boolean isDealer;
     private boolean endedTurn;
@@ -39,6 +40,25 @@ public class Player {
         updatePoints();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Player)) return false;
+        Player player = (Player) o;
+        return getPoints() == player.getPoints() &&
+                isDealer() == player.isDealer() &&
+                isEndedTurn() == player.isEndedTurn() &&
+                Objects.equals(pointsCalculator, player.pointsCalculator) &&
+                Objects.equals(getCardsInHand(), player.getCardsInHand()) &&
+                Objects.equals(getName(), player.getName());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(pointsCalculator, getCardsInHand(), getPoints(), getName(), isDealer(), isEndedTurn());
+    }
+
     public void updatePoints() {
         points = pointsCalculator.calculatePoints(cardsInHand);
     }
@@ -47,7 +67,7 @@ public class Player {
         return cardsInHand;
     }
 
-    public int getPoints(){
+    public Integer getPoints(){
         return points;
     }
 

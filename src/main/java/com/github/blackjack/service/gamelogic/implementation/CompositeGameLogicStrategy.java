@@ -30,7 +30,7 @@ public class CompositeGameLogicStrategy implements Logic {
         return strategies.stream().anyMatch(logic -> logic.supports(moveType));
     }
 
-    private static Builder builder(){
+    public static Builder builder(){
         return new Builder();
     }
 
