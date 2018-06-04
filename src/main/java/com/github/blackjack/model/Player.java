@@ -39,7 +39,7 @@ public class Player {
         updatePoints();
     }
 
-    private void updatePoints() {
+    public void updatePoints() {
         points = pointsCalculator.calculatePoints(cardsInHand);
     }
 
