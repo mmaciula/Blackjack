@@ -6,12 +6,14 @@ import com.github.blackjack.model.Player;
 import com.github.blackjack.model.enums.Move;
 import com.github.blackjack.service.PointsCalculator;
 import com.github.blackjack.service.decision.DecisionTaker;
+import com.google.inject.Inject;
 
 import java.util.List;
 
 public class DealerDecisionTaker implements DecisionTaker {
     private PointsCalculator blackjackPointsCalculator;
 
+    @Inject
     public DealerDecisionTaker(PointsCalculator blackjackPointsCalculator){
         this.blackjackPointsCalculator = blackjackPointsCalculator;
     }

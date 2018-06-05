@@ -1,6 +1,8 @@
 package com.github.blackjack.model;
 
 import com.github.blackjack.service.PointsCalculator;
+import com.github.blackjack.service.implementation.BlackjackPointsCalculator;
+import com.google.inject.assistedinject.Assisted;
 import com.google.inject.assistedinject.AssistedInject;
 
 import java.util.ArrayList;
