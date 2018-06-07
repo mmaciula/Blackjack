@@ -18,7 +18,7 @@ public class Player {
     private boolean endedTurn;
 
     @AssistedInject
-    public Player(PointsCalculator blackjackPointsCalculator, String name){
+    public Player(PointsCalculator blackjackPointsCalculator,String name){
         pointsCalculator = blackjackPointsCalculator;
         cardsInHand = new ArrayList<>();
         points = 0;

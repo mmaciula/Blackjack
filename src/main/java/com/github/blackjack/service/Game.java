@@ -10,6 +10,7 @@ import com.github.blackjack.service.decision.DecisionTaker;
 import com.github.blackjack.service.gamelogic.Logic;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
+import com.google.inject.assistedinject.AssistedInject;
 
 public class Game {
     private static final Integer AMOUNT_OF_CARDS_TO_DRAW_ON_START = 2;
@@ -26,7 +27,7 @@ public class Game {
     private Player currentTurn;
     private boolean isGameOn = false;
 
-    @Inject
+    @AssistedInject
     public Game(
             Randomizer<Card> cardRandomizer,
             StatisticPrinter statisticsPrinter,
