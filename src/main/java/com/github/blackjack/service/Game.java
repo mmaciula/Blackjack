@@ -48,8 +48,8 @@ public class Game {
 
     public void start() {
         isGameOn = true;
-        addRandomizedCardsFromDeckToMembersHard(player);
-        addRandomizedCardsFromDeckToMembersHard(dealer);
+        addRandomizedCardsFromDeckToMembersHand(player);
+        addRandomizedCardsFromDeckToMembersHand(dealer);
         statisticsPrinter.printStatistics(player, dealer);
         do {
             Move decision = decisionTaker.getDecision(player, dealer, currentTurn);
@@ -100,7 +100,7 @@ public class Game {
     }
 
 
-    private void addRandomizedCardsFromDeckToMembersHard(Player member) {
+    private void addRandomizedCardsFromDeckToMembersHand(Player member) {
         for (int i = 0; i < AMOUNT_OF_CARDS_TO_DRAW_ON_START; i++) {
             Card card = cardRandomizer.randomizeCard(deck.getCards());
             deck.removeCard(card.getCardSuit(), card.getCardRank());
