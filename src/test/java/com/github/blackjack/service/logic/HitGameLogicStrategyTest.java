@@ -10,7 +10,6 @@ import com.github.blackjack.model.enums.SpecialCase;
 import com.github.blackjack.service.Randomizer;
 import com.github.blackjack.service.gamelogic.Logic;
 import com.github.blackjack.service.gamelogic.implementation.HitGameLogicStrategy;
-import com.github.blackjack.service.implementation.BlackjackCardRandomizer;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
