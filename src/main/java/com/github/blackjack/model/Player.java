@@ -1,8 +1,6 @@
 package com.github.blackjack.model;
 
 import com.github.blackjack.service.PointsCalculator;
-import com.github.blackjack.service.implementation.BlackjackPointsCalculator;
-import com.google.inject.assistedinject.Assisted;
 import com.google.inject.assistedinject.AssistedInject;
 
 import java.util.ArrayList;
@@ -18,7 +16,7 @@ public class Player {
     private boolean endedTurn;
 
     @AssistedInject
-    public Player(PointsCalculator blackjackPointsCalculator,String name){
+    public Player(PointsCalculator blackjackPointsCalculator, String name){
         pointsCalculator = blackjackPointsCalculator;
         cardsInHand = new ArrayList<>();
         points = 0;
@@ -95,5 +93,12 @@ public class Player {
 
     public void setEndedTurn(boolean endedTurn){
         this.endedTurn = endedTurn;
+    }
+
+    public void makeAllCardsVisible(){
+        for (Card card : cardsInHand){
+            ((BlackjackCard) card).setHidden(false);
+        }
+        updatePoints();
     }
 }

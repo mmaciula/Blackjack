@@ -4,6 +4,7 @@ import com.github.blackjack.model.Player;
 import com.github.blackjack.model.enums.Move;
 import com.github.blackjack.service.decision.DecisionTaker;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleDecisionTaker implements DecisionTaker {
@@ -35,14 +36,19 @@ public class ConsoleDecisionTaker implements DecisionTaker {
     }
 
     private Move getDecision() {
-        boolean hasDecision = false;
-        Integer decision;
+        Integer decision = 0;
         do {
-            decision = READER.nextInt();
-            if (decision > 0 && decision <= availableMoves.length) {
-                hasDecision = true;
+            try{
+                decision = READER.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("You must type a number");
+                e.printStackTrace();
             }
-        } while (!hasDecision);
+        } while (!isCorrect(decision));
         return availableMoves[decision - 1];
+    }
+
+    private boolean isCorrect(Integer decision){
+        return (decision > 0 && decision <= availableMoves.length);
     }
 }

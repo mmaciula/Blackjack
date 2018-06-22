@@ -5,7 +5,7 @@ import com.github.blackjack.model.enums.CardSuit;
 import java.util.Objects;
 
 public class BlackjackCard extends Card {
-    private int cardValue;
+    private Integer cardValue;
     private boolean isHidden;
 
     public BlackjackCard(CardSuit suit, String cardRank, int value){
@@ -14,7 +14,7 @@ public class BlackjackCard extends Card {
         isHidden = false;
     }
 
-    public int getCardValue() {
+    public Integer getCardValue() {
         return cardValue;
     }
 
